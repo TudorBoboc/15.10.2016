@@ -41,6 +41,28 @@ int main()
     cout << "Introdu un numar: ";
     cin >> numarIntrodus;
 // Introcudere numar in vector
+
+// Sortare numar descendent
+    functieSortare(numarIntrodusVector[4]);
+//Creere vector ascendent
+    for(i = 0, j = 3; i < 4; i++, j--)
+    {
+        ascendentNumarIntrodus[j] = numarIntrodusVector[i];
+    }
+//Rezultatul scaderii a doi vectori
+    numarIntrodus = numarIntrodusVector[0]*1000+numarIntrodusVector[1]*100+numarIntrodusVector[2]*10+numarIntrodusVector[3];
+    numarIntrodusAscendent = ascendentNumarIntrodus[0]*1000+ascendentNumarIntrodus[1]*100+ascendentNumarIntrodus[2]*10+ascendentNumarIntrodus[3];
+    cout << numarIntrodus << " " << numarIntrodusAscendent;
+
+    return 0;
+}
+
+
+int[4] tra(int n)
+{
+
+    int numarIntrodusVector[4];
+
     if(100 < numarIntrodus && numarIntrodus < 1000)
     {
         numarIntrodusVector[0] = 0;
@@ -57,20 +79,11 @@ int main()
     }
     else
     {
-        cout << "\nNumar in afara limitelor.\n\n";
-        return 0;
+        //cout << "\nNumar in afara limitelor.\n\n";
+        //return 0;
+        numarIntrodusVector[0]=-1;
     }
-// Sortare numar descendent
-    functieSortare(numarIntrodusVector[4]);
-//Creere vector ascendent
-    for(i = 0, j = 3; i < 4; i++, j--)
-    {
-        ascendentNumarIntrodus[j] = numarIntrodusVector[i];
-    }
-//Rezultatul scaderii a doi vectori
-    numarIntrodus = numarIntrodusVector[0]*1000+numarIntrodusVector[1]*100+numarIntrodusVector[2]*10+numarIntrodusVector[3];
-    numarIntrodusAscendent = ascendentNumarIntrodus[0]*1000+ascendentNumarIntrodus[1]*100+ascendentNumarIntrodus[2]*10+ascendentNumarIntrodus[3];
-    cout << numarIntrodus << " " << numarIntrodusAscendent;
 
-    return 0;
+    return numarIntrodusVector;
 }
+
