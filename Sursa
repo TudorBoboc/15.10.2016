@@ -11,27 +11,9 @@ desc_digits(120) -> 2100
 **************************************************************/
 using namespace std;
 
-int functieSortare(int)
-{
-    int vectorSortat[4] ,aux, i, j = 0;
-    bool schimbare = true;
-    while(schimbare)
-    {
-        schimbare = false;
-        j++;
-        for(i = 0; i < 4 - j; i++)
-        {
-            if(vectorSortat[i] < vectorSortat[i+1])
-            {
-                aux = vectorSortat[i];
-                vectorSortat[i] = vectorSortat[i+1];
-                vectorSortat[i+1] = aux;
-                schimbare = true;
-            }
-        }
-    }
-    return vectorSortat[4];
-}
+int* transformare(int numarIntrodus);
+int* sortare(int*);
+
 
 int main()
 {
@@ -41,9 +23,9 @@ int main()
     cout << "Introdu un numar: ";
     cin >> numarIntrodus;
 // Introcudere numar in vector
-
+    numarIntrodusVector = transformare(numarIntrodus);
 // Sortare numar descendent
-    functieSortare(numarIntrodusVector[4]);
+    functieSortare(numarIntrodusVector[]);
 //Creere vector ascendent
     for(i = 0, j = 3; i < 4; i++, j--)
     {
@@ -57,8 +39,7 @@ int main()
     return 0;
 }
 
-
-int[4] tra(int n)
+int* transformare(int numarIntrodus)
 {
 
     int numarIntrodusVector[4];
@@ -85,5 +66,26 @@ int[4] tra(int n)
     }
 
     return numarIntrodusVector;
+}
+int* sortare(int)
+{
+    int vectorSortat[4] ,aux, i, j = 0;
+    bool schimbare = true;
+    while(schimbare)
+    {
+        schimbare = false;
+        j++;
+        for(i = 0; i < 4 - j; i++)
+        {
+            if(vectorSortat[i] < vectorSortat[i+1])
+            {
+                aux = vectorSortat[i];
+                vectorSortat[i] = vectorSortat[i+1];
+                vectorSortat[i+1] = aux;
+                schimbare = true;
+            }
+        }
+    }
+    return vectorSortat;
 }
 
